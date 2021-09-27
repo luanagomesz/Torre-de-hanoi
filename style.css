@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+
 /* Menu inicial */
 
 body{
@@ -66,4 +68,25 @@ box-shadow: 0 5px rgb(68, 47, 32);
     display: flex;
     justify-content: center;
     height: 20px;
+}
+
+#items{
+    font-family: 'Josefin Sans', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    width: 90vw;
+    margin-top: 30px;
+}
+#contadorDeMovimento h3{
+    margin: 5px 10px;
+}
+#contadorDeMovimento p{
+    font-family: 'Gemunu Libre', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 5px;
+}
+#contadorDeMovimento{
+    border: 1px dashed black;
+    text-align: center;
 }

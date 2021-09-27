@@ -25,10 +25,14 @@ const selecionado = document.getElementById("selecionado")
 const torre1 = document.getElementById("torre1").addEventListener('click', selecionar)
 const torre2 = document.getElementById("torre2").addEventListener('click', selecionar)
 const torre3 = document.getElementById("torre3").addEventListener('click', selecionar)
-
+const MovimentosRealizados = document.getElementById("contagem")
+let count = 0
 function selecionar(e){
 if(selecionado.childElementCount > 0){
   e.currentTarget.appendChild(selecionado.lastElementChild)
+  count++
+  MovimentosRealizados.innerText = count
+
  }
  else if(e.currentTarget.childElementCount > 0 && selecionado.childElementCount == 0){
     let lastchild = e.currentTarget.lastElementChild
