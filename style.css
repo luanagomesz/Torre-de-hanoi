@@ -53,7 +53,7 @@ box-shadow: 0 5px rgb(68, 47, 32);
 
 }
 .torres{
-    width: 30px;
+    width: 10px;
     height: 200px;
     background-color: rgb(68, 47, 32);
     border: 2px solid black;
@@ -61,4 +61,8 @@ box-shadow: 0 5px rgb(68, 47, 32);
     display: flex; 
     flex-direction: column-reverse; 
     align-items: center;
+}
+#selecionado{
+    display: flex;
+    justify-content: center;
 }
