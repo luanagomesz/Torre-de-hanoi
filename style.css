@@ -65,4 +65,5 @@ box-shadow: 0 5px rgb(68, 47, 32);
 #selecionado{
     display: flex;
     justify-content: center;
+    height: 20px;
 }

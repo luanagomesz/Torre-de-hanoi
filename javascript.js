@@ -20,17 +20,18 @@ for(let i=1; i<=3; i++){
     torre1.appendChild(discos)
 }
 })
-/* Selecionando argolas
+
 const selecionado = document.getElementById("selecionado")
 const torre1 = document.getElementById("torre1").addEventListener('click', selecionar)
 const torre2 = document.getElementById("torre2").addEventListener('click', selecionar)
 const torre3 = document.getElementById("torre3").addEventListener('click', selecionar)
 
 function selecionar(e){
-if(e.currentTarget.childElementCount > 0 && selecionado.childElementCount == 0){
-    let lastchild = e.lastElementChild
-    console.log(lastchild)
+if(selecionado.childElementCount > 0){
+  e.currentTarget.appendChild(selecionado.lastElementChild)
+ }
+ else if(e.currentTarget.childElementCount > 0 && selecionado.childElementCount == 0){
+    let lastchild = e.currentTarget.lastElementChild
     selecionado.appendChild(lastchild)
 }
 }
-*/
