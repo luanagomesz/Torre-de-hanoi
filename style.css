@@ -1,0 +1,64 @@
+/* Menu inicial */
+
+body{
+    margin: 0px;
+background-color: rgb(219, 219, 219);
+}
+#start{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    font-family: 'Gemunu Libre', sans-serif;
+    font-size: 30px;
+    padding-top: 150px;
+    text-shadow: 2px 2px 2px #CE5937;
+}
+
+#play{
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+font-family: 'Gemunu Libre', sans-serif;
+font-size: 25px;
+background-color: rgb(222, 155, 135);
+color: white;
+cursor: pointer;
+outline: none;
+box-shadow: 0 5px rgb(68, 47, 32);
+}
+#play:active{
+    box-shadow: 0 2px rgb(68, 47, 32);
+    transform: translateY(4px); 
+}
+
+
+/* após iniciar */
+
+#main{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+#main h1{
+    font-family: 'Gemunu Libre', sans-serif;
+    text-shadow: 2px 2px 2px #CE5937;
+    font-size: 60px;
+}
+#box1{
+    padding-top: 50px;
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
+
+}
+.torres{
+    width: 30px;
+    height: 200px;
+    background-color: rgb(68, 47, 32);
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex; 
+    flex-direction: column-reverse; 
+    align-items: center;
+}
