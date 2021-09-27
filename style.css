@@ -89,4 +89,21 @@ box-shadow: 0 5px rgb(68, 47, 32);
 #contadorDeMovimento{
     border: 1px dashed black;
     text-align: center;
+    border-radius: 10px;
+}
+#reset{
+    border: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    border-bottom: 3px solid black;
+    border-radius: 10px;
+}
+#reset:active{
+    border: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    margin-top: 5px;
+    border-radius: 10px;
 }

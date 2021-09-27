@@ -39,3 +39,17 @@ if(selecionado.childElementCount > 0){
     selecionado.appendChild(lastchild)
 }
 }
+
+
+//botão de Reset
+const reset = document.getElementById("reset")
+reset.addEventListener('click',function(){
+    count = 0
+    MovimentosRealizados.innerText = count
+    let torre = document.getElementById("torre1")
+    torre.appendChild(document.getElementById("disco1"))
+    torre.appendChild(document.getElementById("disco2"))
+    torre.appendChild(document.getElementById("disco3"))
+    torre.appendChild(document.getElementById("disco4"))
+    torre.appendChild(document.getElementById("disco5"))
+})
