@@ -19,7 +19,8 @@ for(let i=1; i<=3; i++){
     torress.style.alignItems = 'center'
     torress.setAttribute('id', 'torre' +i)
     document.getElementById("box1").appendChild(torress)
-    }
+    document.getElementById("torre"+i).appendChild(document.createElement("span"))
+}
 
 
 // ao iniciar jogo esconde menu inicial e cria discos dinamicamente
@@ -46,17 +47,19 @@ const torre2 = document.getElementById("torre2").addEventListener('click', selec
 const torre3 = document.getElementById("torre3").addEventListener('click', selecionar)
 const MovimentosRealizados = document.getElementById("contagem")
 let count = 0
-function selecionar(e){
-if(selecionado.childElementCount > 0){
-  e.currentTarget.appendChild(selecionado.lastElementChild)
-  count++
-  MovimentosRealizados.innerText = count
- }
- else if(e.currentTarget.childElementCount > 0 && selecionado.childElementCount == 0){
-    let lastchild = e.currentTarget.lastElementChild
-    selecionado.appendChild(lastchild)
-}
-mensagemVitoria()
+function selecionar(e) {
+    if (selecionado.childElementCount > 0) {       
+        if (e.currentTarget.lastElementChild.clientWidth > selecionado.clientWidth) {
+            e.currentTarget.appendChild(selecionado.lastElementChild)
+            count++
+        }
+        MovimentosRealizados.innerText = count
+    }
+    else if (e.currentTarget.childElementCount > 1 && selecionado.childElementCount == 0) {
+        let lastchild = e.currentTarget.lastElementChild
+        selecionado.appendChild(lastchild)
+    }
+    mensagemVitoria()
 }
 //botão de voltar a tela inicial
 const botaovoltar = document.getElementById("buttonMenu").addEventListener("click", function(){
@@ -110,23 +113,24 @@ const dificil = document.getElementById('dificil').addEventListener('click', fun
 let quantidade = 3
 
 
-const torreFinal = document.getElementById("torre3")
+const torreMeio = document.getElementById("torre2")
+const torreCanto = document.getElementById("torre3")
 //mensagem vitoria
 function mensagemVitoria(){
     console.log("teste")
 const torreFinal = document.getElementById("torre3")
-if(quantidade == 3 && torreFinal.childElementCount == 3){
+if(quantidade == 3 && (torreMeio.childElementCount == 4 || torreCanto.childElementCount == 4)){
 let aleatorio = Math.floor(Math.random() * mensagem.length )
 document.getElementById("vitoria").innerText = mensagem[aleatorio]
 document.getElementById("imgbox").style.display = 'flex'
 }
-else if(quantidade == 4 && torreFinal.childElementCount == 4){
+else if(quantidade == 4 && (torreMeio.childElementCount == 5 || torreCanto.childElementCount == 5)){
     let aleatorio = Math.floor(Math.random() * mensagem.length )
     document.getElementById("vitoria").innerText = mensagem[aleatorio]
     document.getElementById("imgbox").style.display = 'flex'
 
  }
- else if(quantidade == 5 && torreFinal.childElementCount == 5){
+ else if(quantidade == 5 && (torreMeio.childElementCount == 6 || torreCanto.childElementCount == 6)){
     let aleatorio = Math.floor(Math.random() * mensagem.length )
     document.getElementById("vitoria").innerText = mensagem[aleatorio]
     document.getElementById("imgbox").style.display = 'flex'

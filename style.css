@@ -173,3 +173,7 @@ box-shadow: 0 5px rgb(68, 47, 32);
     border-radius: 10px;
     z-index: 2;
 }
+span{
+    display: block;
+    width: 100px;
+}
