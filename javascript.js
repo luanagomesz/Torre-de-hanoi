@@ -1,46 +1,40 @@
 const buttonplay = document.getElementById("play")
 const menuinicial = document.getElementById("start")
 const main = document.getElementById('main')
-const cores = ['#DC143C','#CD5C5C','#F08080','#FFC0CB','#FFB6C1']
-const tamanhos = ['80px', "70px", "60px", "50px","40px"]
-const mensagem = ['Parabéns Einstein, você venceu 🤓', 'Stephen Hawking ficaria impressionado 🧐', 'um genio incompreendido, Parabéns 👌', ]
+const cores = ['#DC143C', '#CD5C5C', '#F08080', '#FFC0CB', '#FFB6C1']
+const tamanhos = ['80px', "70px", "60px", "50px", "40px"]
+const mensagem = ['Parabéns Einstein, você venceu 🤓', 'Stephen Hawking ficaria impressionado 🧐', 'um genio incompreendido, Parabéns 👌',]
 document.getElementById("minimoMovimento").innerText = "Vitoria ideal é 7 movimentos"
 
 // criando torres dinamicamente
-for(let i=1; i<=3; i++){
+for (let i = 1; i <= 3; i++) {
     let torress = document.createElement('div')
-    torress.style.width = "10px"
-    torress.style.height = "200px"
-    torress.style.backgroundColor = "rgb(68, 47, 32)"
-    torress.style.border = "2px solid black"
-    torress.style.borderRadius = "10px"
-    torress.style.display = 'flex'
-    torress.style.flexDirection = 'column-reverse'
-    torress.style.alignItems = 'center'
-    torress.setAttribute('id', 'torre' +i)
+    torress.setAttribute('id', 'torre' + i)
+    torress.setAttribute('class', 'torre')
     document.getElementById("box1").appendChild(torress)
 }
 
 
 // ao iniciar jogo esconde menu inicial e cria discos dinamicamente
-buttonplay.addEventListener('click', function(){
-menuinicial.style.display = "none";
-main.style.display = "flex"
-document.getElementById("voltarMenu").style.display = "flex"
-const torre1 = document.getElementById("torre1")
-for(let i=1; i<=quantidade; i++){
-    let discos = document.createElement('div')
-    discos.style.width = tamanhos[i-1]
-    discos.style.height = "20px"
-    discos.style.backgroundColor = cores[i-1]
-    discos.style.border = "1px solid black"
-    discos.style.borderRadius = "8px"
-    discos.setAttribute('id', 'disco' +i)
-    torre1.appendChild(discos)
-}
+buttonplay.addEventListener('click', function () {
+    menuinicial.style.display = "none";
+    main.style.display = "flex"
+    document.getElementById("voltarMenu").style.display = "flex"
+    const torre1 = document.getElementById("torre1")
+    for (let i = 1; i <= quantidade; i++) {
+        let discos = document.createElement('div')
+        discos.style.width = tamanhos[i - 1]
+        discos.style.height = "20px"
+        discos.style.backgroundColor = cores[i - 1]
+        discos.style.border = "1px solid black"
+        discos.style.borderRadius = "8px"
+        discos.style.cursor = "pointer"
+        discos.setAttribute('id', 'disco' + i)
+        torre1.appendChild(discos)
+    }
 })
 
-const tutorial = document.getElementById("tutorial").addEventListener('click', function(){
+const tutorial = document.getElementById("tutorial").addEventListener('click', function () {
     menuinicial.style.display = "none";
     main.style.display = "none"
     document.getElementById("instruções").style.display = "block"
@@ -55,11 +49,11 @@ const torre3 = document.getElementById("torre3").addEventListener('click', selec
 const MovimentosRealizados = document.getElementById("contagem")
 let count = 0
 function selecionar(e) {
-    if (selecionado.childElementCount > 0) { 
-        if (e.currentTarget.childElementCount == 0){
+    if (selecionado.childElementCount > 0) {
+        if (e.currentTarget.childElementCount == 0) {
             e.currentTarget.appendChild(selecionado.lastElementChild)
             count++
-        }      
+        }
         else if (e.currentTarget.lastElementChild.clientWidth > selecionado.clientWidth) {
             e.currentTarget.appendChild(selecionado.lastElementChild)
             count++
@@ -73,7 +67,7 @@ function selecionar(e) {
     mensagemVitoria()
 }
 //botão de voltar a tela inicial
-const botaovoltar = document.getElementById("buttonMenu").addEventListener("click", function(){
+const botaovoltar = document.getElementById("buttonMenu").addEventListener("click", function () {
     menuinicial.style.display = "flex";
     main.style.display = "none"
     document.getElementById("instruções").style.display = "none"
@@ -91,7 +85,7 @@ const botaovoltar = document.getElementById("buttonMenu").addEventListener("clic
 
 //botão de Reset
 const reset = document.getElementById("reset")
-reset.addEventListener('click',function(){
+reset.addEventListener('click', function () {
     document.getElementById("imgbox").style.display = 'none'
     document.getElementById("vitoria").innerText = ""
     count = 0
@@ -106,19 +100,19 @@ reset.addEventListener('click',function(){
 
 //seletor de dificuldade
 
-const facil = document.getElementById('facil').addEventListener('click', function(){
-let dificuldade = document.getElementById("dificuldade")
-dificuldade.innerText = "Fácil"
-quantidade = 3
-document.getElementById("minimoMovimento").innerText = "Vitoria ideal é 7 movimentos"
+const facil = document.getElementById('facil').addEventListener('click', function () {
+    let dificuldade = document.getElementById("dificuldade")
+    dificuldade.innerText = "Fácil"
+    quantidade = 3
+    document.getElementById("minimoMovimento").innerText = "Vitoria ideal é 7 movimentos"
 })
-const equilibrado = document.getElementById('equilibrado').addEventListener('click', function(){
+const equilibrado = document.getElementById('equilibrado').addEventListener('click', function () {
     let dificuldade = document.getElementById("dificuldade")
     dificuldade.innerText = "Equilibrado"
     quantidade = 4
     document.getElementById("minimoMovimento").innerText = "Vitoria ideal é 15 movimentos"
 })
-const dificil = document.getElementById('dificil').addEventListener('click', function(){
+const dificil = document.getElementById('dificil').addEventListener('click', function () {
     let dificuldade = document.getElementById("dificuldade")
     dificuldade.innerText = "Difícil"
     quantidade = 5
@@ -130,25 +124,25 @@ let quantidade = 3
 const torreMeio = document.getElementById("torre2")
 const torreCanto = document.getElementById("torre3")
 //mensagem vitoria
-function mensagemVitoria(){
-const torreFinal = document.getElementById("torre3")
-if(quantidade == 3 && (torreMeio.childElementCount == 3 || torreCanto.childElementCount == 3)){
-let aleatorio = Math.floor(Math.random() * mensagem.length )
-document.getElementById("vitoria").innerText = mensagem[aleatorio]
-document.getElementById("imgbox").style.display = 'flex'
-}
-else if(quantidade == 4 && (torreMeio.childElementCount == 4 || torreCanto.childElementCount == 4)){
-    let aleatorio = Math.floor(Math.random() * mensagem.length )
-    document.getElementById("vitoria").innerText = mensagem[aleatorio]
-    document.getElementById("imgbox").style.display = 'flex'
+function mensagemVitoria() {
+    const torreFinal = document.getElementById("torre3")
+    if (quantidade == 3 && (torreMeio.childElementCount == 3 || torreCanto.childElementCount == 3)) {
+        let aleatorio = Math.floor(Math.random() * mensagem.length)
+        document.getElementById("vitoria").innerText = mensagem[aleatorio]
+        document.getElementById("imgbox").style.display = 'flex'
+    }
+    else if (quantidade == 4 && (torreMeio.childElementCount == 4 || torreCanto.childElementCount == 4)) {
+        let aleatorio = Math.floor(Math.random() * mensagem.length)
+        document.getElementById("vitoria").innerText = mensagem[aleatorio]
+        document.getElementById("imgbox").style.display = 'flex'
 
- }
- else if(quantidade == 5 && (torreMeio.childElementCount == 5 || torreCanto.childElementCount == 5)){
-    let aleatorio = Math.floor(Math.random() * mensagem.length )
-    document.getElementById("vitoria").innerText = mensagem[aleatorio]
-    document.getElementById("imgbox").style.display = 'flex'
+    }
+    else if (quantidade == 5 && (torreMeio.childElementCount == 5 || torreCanto.childElementCount == 5)) {
+        let aleatorio = Math.floor(Math.random() * mensagem.length)
+        document.getElementById("vitoria").innerText = mensagem[aleatorio]
+        document.getElementById("imgbox").style.display = 'flex'
 
- }
+    }
 
 
 

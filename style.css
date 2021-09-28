@@ -12,6 +12,11 @@ background-color: rgb(219, 219, 219);
     padding-left: 10px;
     text-align: center;
     font-family: 'Josefin Sans', sans-serif;
+    margin: auto;
+    max-width: 800px;
+}
+#intruçãoNaTela{
+    line-height: 21px;
 }
 #start{
     display: flex;
@@ -19,7 +24,7 @@ background-color: rgb(219, 219, 219);
     align-items: center;
     font-family: 'Gemunu Libre', sans-serif;
     font-size: 30px;
-    padding-top: 60px;
+    /* padding-top: 60px; */
     text-shadow: 2px 2px 2px #CE5937;
 }
 #start h2{
@@ -32,6 +37,7 @@ background-color: rgb(219, 219, 219);
 }
 #start h1{
     margin-bottom: 20px;
+    text-align: center;
 }
 #start p{
     margin: 0px;
@@ -51,6 +57,7 @@ color: white;
 cursor: pointer;
 outline: none;
 box-shadow: 0 5px rgb(68, 47, 32);
+margin: 12px 0;
 }
 #play:active{
     box-shadow: 0 2px rgb(68, 47, 32);
@@ -72,6 +79,9 @@ box-shadow: 0 5px rgb(68, 47, 32);
 #tutorial:active{
     box-shadow: 0 2px rgb(68, 47, 32);
     transform: translateY(4px); 
+}
+#selecionarDificuldade{
+    margin: 10px 0;
 }
 #selecionarDificuldade button{
     padding: 3px 10px;
@@ -110,13 +120,24 @@ box-shadow: 0 5px rgb(68, 47, 32);
     font-size: 60px;
     margin-top: 10px;
     margin-bottom: 10px;
+    text-align: center;
 }
 #box1{
     padding-top: 20px;
-    width: 80vw;
+    width: 75vw;
     display: flex;
     justify-content: space-between;
 
+}
+.torre{
+    width: 10px;
+    height: 150px;
+    background-color: rgb(68, 47, 32);
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
 }
 #selecionado{
     display: flex;
@@ -128,8 +149,8 @@ box-shadow: 0 5px rgb(68, 47, 32);
     font-family: 'Josefin Sans', sans-serif;
     display: flex;
     justify-content: space-between;
-    width: 90vw;
-    margin-top: 30px;
+    width: 95vw;
+    margin-top: 20px;
     z-index: 2;
 }
 #contadorDeMovimento h3{
@@ -142,9 +163,23 @@ box-shadow: 0 5px rgb(68, 47, 32);
     margin: 5px;
 }
 #contadorDeMovimento{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contadorDeMovimentos{
     border: 1px dashed black;
     text-align: center;
     border-radius: 10px;
+    display: block;
+    width: 120px;
+}
+p#minimoMovimento {
+    font-size: 15px;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    margin: 15px 0;
 }
 #reset{
     background-color: rgb(222, 155, 135);
@@ -155,6 +190,9 @@ box-shadow: 0 5px rgb(68, 47, 32);
     font-weight: 800;
     border-bottom: 3px solid rgb(68, 47, 32);
     border-radius: 10px;
+    width: 150px;
+    height: 80px;
+    cursor: pointer;
 }
 #reset:active{
     background-color: rgb(222, 155, 135);
@@ -168,20 +206,13 @@ box-shadow: 0 5px rgb(68, 47, 32);
 }
 
 #box2{
-    width: 80vw;
+    /* width: 80vw; */
     text-align: center;
     height: 50px;
+    margin: 30px 0;
 }
+
 #box2 h2{
-    font-family: 'Josefin Sans', sans-serif;
-}
-#box3{
-    width: 95vw;
-    display: flex;
-    justify-content: space-between;
-}
-#minimoMovimento{
-    font-size: 15px;
     font-family: 'Josefin Sans', sans-serif;
 }
 #voltarMenu{
@@ -191,7 +222,7 @@ box-shadow: 0 5px rgb(68, 47, 32);
 }
 #buttonMenu{
     padding: 10px 10px;
-    margin-top: 50px;
+    margin-top: 2%'';
     background-color: white;
     color: black;
     border: none;
@@ -201,4 +232,59 @@ box-shadow: 0 5px rgb(68, 47, 32);
     border: none;
     border-radius: 10px;
     z-index: 2;
+    cursor: pointer;
+}
+#imgbox>img{
+    width: 100vw;
+    height: 100vh;
+}
+@media screen and (min-Width: 700px) {
+    #box1{
+        width: 50vw;
+    }
+    #items{
+        width: 65vw;
+    }
+    #intruçãoNaTela{
+        font-size: 1.5em;
+        line-height: normal;
+    }
+}
+@media screen and (min-width:1000px){
+    #start h1{
+        font-size: 3em;
+    }
+    #play{
+        font-size: 35px;
+    }
+    #tutorial{
+        font-size: 35px;
+    }
+    #start h2{
+        font-size: 1.5em;
+    }
+    #start p{
+        font-size: 35px;
+    }
+    #selecionarDificuldade button{
+        font-size: 35px;
+    }
+    #buttonMenu{
+        font-size: 25px;
+    }
+    #main h1{
+        font-size: 90px;
+    }
+    #contadorDeMovimentos{
+        width: 200px;
+    }
+    #contadorDeMovimento h3{
+        font-size: 2em;
+    }
+    #contadorDeMovimento p{
+        font-size: 30px;
+    }
+    p#minimoMovimento{
+        font-size: 20px;
+    }
 }
