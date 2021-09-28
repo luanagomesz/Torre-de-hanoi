@@ -6,10 +6,27 @@ const tamanhos = ['80px', "70px", "60px", "50px","40px"]
 const mensagem = ['Parabéns Einstein, você venceu 🤓', 'Stephen Hawking ficaria impressionado 🧐', 'um genio incompreendido, Parabéns 👌', ]
 document.getElementById("minimoMovimento").innerText = "Vitoria ideal é 7 movimentos"
 
+// criando torres dinamicamente
+for(let i=1; i<=3; i++){
+    let torress = document.createElement('div')
+    torress.style.width = "10px"
+    torress.style.height = "200px"
+    torress.style.backgroundColor = "rgb(68, 47, 32)"
+    torress.style.border = "2px solid black"
+    torress.style.borderRadius = "10px"
+    torress.style.display = 'flex'
+    torress.style.flexDirection = 'column-reverse'
+    torress.style.alignItems = 'center'
+    torress.setAttribute('id', 'torre' +i)
+    document.getElementById("box1").appendChild(torress)
+    }
+
+
 // ao iniciar jogo esconde menu inicial e cria discos dinamicamente
 buttonplay.addEventListener('click', function(){
 menuinicial.style.display = "none";
 main.style.display = "flex"
+
 const torre1 = document.getElementById("torre1")
 for(let i=1; i<=quantidade; i++){
     let discos = document.createElement('div')
