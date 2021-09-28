@@ -26,7 +26,7 @@ for(let i=1; i<=3; i++){
 buttonplay.addEventListener('click', function(){
 menuinicial.style.display = "none";
 main.style.display = "flex"
-
+document.getElementById("voltarMenu").style.display = "flex"
 const torre1 = document.getElementById("torre1")
 for(let i=1; i<=quantidade; i++){
     let discos = document.createElement('div')
@@ -38,6 +38,14 @@ for(let i=1; i<=quantidade; i++){
     discos.setAttribute('id', 'disco' +i)
     torre1.appendChild(discos)
 }
+})
+
+const tutorial = document.getElementById("tutorial").addEventListener('click', function(){
+    menuinicial.style.display = "none";
+    main.style.display = "none"
+    document.getElementById("instruções").style.display = "block"
+    document.getElementById("voltarMenu").style.display = "flex"
+
 })
 
 const selecionado = document.getElementById("selecionado")
@@ -68,6 +76,9 @@ function selecionar(e) {
 const botaovoltar = document.getElementById("buttonMenu").addEventListener("click", function(){
     menuinicial.style.display = "flex";
     main.style.display = "none"
+    document.getElementById("instruções").style.display = "none"
+    document.getElementById("voltarMenu").style.display = "none"
+
     count = 0
     MovimentosRealizados.innerText = count
     document.getElementById("torre1").innerHTML = ""
@@ -116,23 +127,23 @@ const dificil = document.getElementById('dificil').addEventListener('click', fun
 
 let quantidade = 3
 
-
-const torreFinal = document.getElementById("torre3")
+const torreMeio = document.getElementById("torre3")
+const torreCanto = document.getElementById("torre3")
 //mensagem vitoria
 function mensagemVitoria(){
 const torreFinal = document.getElementById("torre3")
-if(quantidade == 3 && torreFinal.childElementCount == 3){
+if(quantidade == 3 && (torreMeio.childElementCount == 3 || torreCanto.childElementCount == 3)){
 let aleatorio = Math.floor(Math.random() * mensagem.length )
 document.getElementById("vitoria").innerText = mensagem[aleatorio]
 document.getElementById("imgbox").style.display = 'flex'
 }
-else if(quantidade == 4 && torreFinal.childElementCount == 4){
+else if(quantidade == 4 && (torreMeio.childElementCount == 4 || torreCanto.childElementCount == 4)){
     let aleatorio = Math.floor(Math.random() * mensagem.length )
     document.getElementById("vitoria").innerText = mensagem[aleatorio]
     document.getElementById("imgbox").style.display = 'flex'
 
  }
- else if(quantidade == 5 && torreFinal.childElementCount == 5){
+ else if(quantidade == 5 && (torreMeio.childElementCount == 5 || torreCanto.childElementCount == 5)){
     let aleatorio = Math.floor(Math.random() * mensagem.length )
     document.getElementById("vitoria").innerText = mensagem[aleatorio]
     document.getElementById("imgbox").style.display = 'flex'
