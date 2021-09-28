@@ -127,7 +127,7 @@ const dificil = document.getElementById('dificil').addEventListener('click', fun
 
 let quantidade = 3
 
-const torreMeio = document.getElementById("torre3")
+const torreMeio = document.getElementById("torre2")
 const torreCanto = document.getElementById("torre3")
 //mensagem vitoria
 function mensagemVitoria(){
