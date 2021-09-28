@@ -107,3 +107,7 @@ box-shadow: 0 5px rgb(68, 47, 32);
     margin-top: 5px;
     border-radius: 10px;
 }
+span{
+    display: block;
+    width: 100px;
+}

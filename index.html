@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Torre de Hanoi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Torre de Hanoi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div id="start">
-<h1>Torre de Hanoi</h1>
-<button id="play"> Jogar </button>
-</div>
-
-<main id="main">
-<header>
+  <div id="start">
     <h1>Torre de Hanoi</h1>
-</header>
-<div id="selecionado"></div>
-<div id="box1">
-  <div id="torre1" class="torres"></div>
-  <div id="torre2" class="torres"></div>
-  <div id="torre3" class="torres"></div>
-</div>
-
-<div id="items">
-  <div id="contadorDeMovimento">
-    <h3>Movimentos <br> Realizados </h3>
-       <p id="contagem"> 0</p>
+    <button id="play"> Jogar </button>
   </div>
-  <button id="reset">Recomeçar</button>
-</div>
 
-</main>
+  <main id="main">
+    <header>
+      <h1>Torre de Hanoi</h1>
+    </header>
+    <div id="selecionado"></div>
+    <div id="box1">
+      <div id="torre1" class="torres"><span></span></div>
+      <div id="torre2" class="torres"><span></span></div>
+      <div id="torre3" class="torres"><span></span></div>
+    </div>
+
+    <div id="items">
+      <div id="contadorDeMovimento">
+        <h3>Movimentos <br> Realizados </h3>
+        <p id="contagem"> 0</p>
+      </div>
+      <button id="reset">Recomeçar</button>
+    </div>
+
+  </main>
 
 
 
-<script src="javascript.js"></script>
+  <script src="javascript.js"></script>
 </body>
+
 </html>
