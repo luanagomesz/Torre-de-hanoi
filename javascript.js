@@ -2,14 +2,16 @@ const buttonplay = document.getElementById("play")
 const menuinicial = document.getElementById("start")
 const main = document.getElementById('main')
 const cores = ['#DC143C','#CD5C5C','#F08080','#FFC0CB','#FFB6C1']
-const tamanhos = ['60px', "50px", "40px", "30px","20px"]
+const tamanhos = ['80px', "70px", "60px", "50px","40px"]
+const mensagem = ['Parabéns Einstein, você venceu 🤓', 'Stephen Hawking ficaria impressionado 🧐', 'um genio incompreendido, Parabéns 👌', ]
+document.getElementById("minimoMovimento").innerText = "Vitoria ideal é 7 movimentos"
 
 // ao iniciar jogo esconde menu inicial e cria discos dinamicamente
 buttonplay.addEventListener('click', function(){
 menuinicial.style.display = "none";
 main.style.display = "flex"
 const torre1 = document.getElementById("torre1")
-for(let i=1; i<=3; i++){
+for(let i=1; i<=quantidade; i++){
     let discos = document.createElement('div')
     discos.style.width = tamanhos[i-1]
     discos.style.height = "20px"
@@ -32,18 +34,31 @@ if(selecionado.childElementCount > 0){
   e.currentTarget.appendChild(selecionado.lastElementChild)
   count++
   MovimentosRealizados.innerText = count
-
  }
  else if(e.currentTarget.childElementCount > 0 && selecionado.childElementCount == 0){
     let lastchild = e.currentTarget.lastElementChild
     selecionado.appendChild(lastchild)
 }
+mensagemVitoria()
 }
-
+//botão de voltar a tela inicial
+const botaovoltar = document.getElementById("buttonMenu").addEventListener("click", function(){
+    menuinicial.style.display = "flex";
+    main.style.display = "none"
+    count = 0
+    MovimentosRealizados.innerText = count
+    document.getElementById("torre1").innerHTML = ""
+    document.getElementById("torre2").innerHTML = ""
+    document.getElementById("torre3").innerHTML = ""
+    document.getElementById("imgbox").style.display = 'none'
+    document.getElementById("vitoria").innerText = ""
+})
 
 //botão de Reset
 const reset = document.getElementById("reset")
 reset.addEventListener('click',function(){
+    document.getElementById("imgbox").style.display = 'none'
+    document.getElementById("vitoria").innerText = ""
     count = 0
     MovimentosRealizados.innerText = count
     let torre = document.getElementById("torre1")
@@ -53,3 +68,54 @@ reset.addEventListener('click',function(){
     torre.appendChild(document.getElementById("disco4"))
     torre.appendChild(document.getElementById("disco5"))
 })
+
+//seletor de dificuldade
+
+const facil = document.getElementById('facil').addEventListener('click', function(){
+let dificuldade = document.getElementById("dificuldade")
+dificuldade.innerText = "Fácil"
+quantidade = 3
+document.getElementById("minimoMovimento").innerText = "Vitoria ideal é 7 movimentos"
+})
+const equilibrado = document.getElementById('equilibrado').addEventListener('click', function(){
+    let dificuldade = document.getElementById("dificuldade")
+    dificuldade.innerText = "Equilibrado"
+    quantidade = 4
+    document.getElementById("minimoMovimento").innerText = "Vitoria ideal é 15 movimentos"
+})
+const dificil = document.getElementById('dificil').addEventListener('click', function(){
+    let dificuldade = document.getElementById("dificuldade")
+    dificuldade.innerText = "Difícil"
+    quantidade = 5
+    document.getElementById("minimoMovimento").innerText = "Vitoria ideal é 31 movimentos"
+})
+
+let quantidade = 3
+
+
+const torreFinal = document.getElementById("torre3")
+//mensagem vitoria
+function mensagemVitoria(){
+    console.log("teste")
+const torreFinal = document.getElementById("torre3")
+if(quantidade == 3 && torreFinal.childElementCount == 3){
+let aleatorio = Math.floor(Math.random() * mensagem.length )
+document.getElementById("vitoria").innerText = mensagem[aleatorio]
+document.getElementById("imgbox").style.display = 'flex'
+}
+else if(quantidade == 4 && torreFinal.childElementCount == 4){
+    let aleatorio = Math.floor(Math.random() * mensagem.length )
+    document.getElementById("vitoria").innerText = mensagem[aleatorio]
+    document.getElementById("imgbox").style.display = 'flex'
+
+ }
+ else if(quantidade == 5 && torreFinal.childElementCount == 5){
+    let aleatorio = Math.floor(Math.random() * mensagem.length )
+    document.getElementById("vitoria").innerText = mensagem[aleatorio]
+    document.getElementById("imgbox").style.display = 'flex'
+
+ }
+
+
+
+}
